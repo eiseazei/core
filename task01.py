@@ -17,4 +17,4 @@ location = input("where do you live? ")
 
 print("Hello ", name)
 print("Your age is ", age)
-print("You live in ", location)
+print("You live in ", location);
