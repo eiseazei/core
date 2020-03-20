@@ -1,0 +1,5 @@
+# c/c++ source files
+*.o
+
+# python byte code
+*.pyc
