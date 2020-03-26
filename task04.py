@@ -2,6 +2,12 @@
 
 from task01 import get_integer
 
+def factorial(n):
+    if n > 1:
+        return n * factorial(n - 1)
+    else:
+        return 1
+
 if __name__ == "__main__":
     # for loop
     for i in range(10):
@@ -53,8 +59,8 @@ if __name__ == "__main__":
 
     #---------------------------------------------------------------------------
     # test bigger
-    a = get_integer()
-    b = get_integer()
+    a = get_integer("enter integer 'a' for biggest test ")
+    b = get_integer("enter integer 'b' for biggest test ")
 
     if(a == b):
         pass
@@ -65,9 +71,13 @@ if __name__ == "__main__":
 
     #---------------------------------------------------------------------------
     # test odd
-    a = get_integer()
+    a = get_integer("enter integer for parity check ")
 
     if a % 2:
-        print(a, "odd")
-    else:
         print(a, "even")
+    else:
+        print(a, "odd")
+
+	#---------------------------------------------------------------------------
+    n = 5
+    print(n, "! = ", factorial(5), sep='')
