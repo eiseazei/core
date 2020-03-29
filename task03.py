@@ -114,9 +114,17 @@ if __name__ == "__main__":
 16.Although never is often better than *right* now.
 17.If the implementation is hard to explain, it's a bad idea."""
 
+    #---------------------------------------------------------------------------
+    # count
     print("count better", lookup("better"))
     print("count never", lookup("never"))
     print("count is", lookup("is"))
+    #---------------------------------------------------------------------------
+    # count
+    print("count better", zen.count('better'))
+    print("count never", zen.count('never'))
+    print("count is", zen.count('is'))
+
     print("zen upper")
     print(zen.upper())
     print("zen replace")
@@ -137,7 +145,7 @@ if __name__ == "__main__":
 
     digits.sort()
     print("sorted digits", digits)
-
+    
     print("x" * 80)
 
     #---------------------------------------------------------------------------
