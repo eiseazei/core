@@ -151,3 +151,8 @@ if __name__ == "__main__":
     y = x - y; print("y = x - y", id(x), id(y))
     x = x - y; print("x = x - y", id(x), id(y))
     print("x =", x, "y =", y)
+
+    #---------------------------------------------------------------------------
+    # switch values
+    x, y = y, x
+    print("x =", x, "y =", y)
