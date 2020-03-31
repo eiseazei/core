@@ -83,6 +83,25 @@ def fact(number):
 
     return result
 
+def parse_login():
+    print('\nparsing login')
+    
+    state = False
+    count = 3
+    login = 'abc123'
+
+    while count > 0:
+        print("enter login (you have", count, "tries): ")
+        value = input()
+        count -= 1
+
+        if login == value:
+            state = True
+            break
+    else:
+        print("you failed to login")
+    
+    return state
 
 if __name__ == "__main__":
     #---------------------------------------------------------------------------
@@ -131,4 +150,8 @@ if __name__ == "__main__":
     # get fact
     number = 5
     print('\nfactorial of', number, 'is', fact(number))
-
+    
+    #---------------------------------------------------------------------------
+    # parse login
+    print('login status:', parse_login())
+    
