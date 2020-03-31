@@ -71,28 +71,28 @@ if __name__ == "__main__":
 
     #---------------------------------------------------------------------------
     # test bigger
-    # a = get_integer("enter integer 'a' for biggest test ")
-    # b = get_integer("enter integer 'b' for biggest test ")
+    a = get_integer("enter integer 'a' for biggest test ")
+    b = get_integer("enter integer 'b' for biggest test ")
 
-    # if(a == b):
-    #     pass
-    # elif(a < b):
-    #     print(b, " is bigger ")
-    # else:
-    #     print(a, " is bigger ")
+    if(a == b):
+        pass
+    elif(a < b):
+        print(b, " is bigger ")
+    else:
+        print(a, " is bigger ")
 
-    # #---------------------------------------------------------------------------
-    # # test odd
-    # a = get_integer("enter integer for parity check ")
+    #---------------------------------------------------------------------------
+    # test odd
+    a = get_integer("enter integer for parity check ")
 
-    # if a % 2:
-    #     print(a, "even")
-    # else:
-    #     print(a, "odd")
+    if a % 2:
+        print(a, "even")
+    else:
+        print(a, "odd")
     
-    # #---------------------------------------------------------------------------
-    # n = 5
-    # print(n, "! = ", factorial(n), sep='')
+    #---------------------------------------------------------------------------
+    n = 5
+    print(n, "! = ", factorial(n), sep='')
 
     #---------------------------------------------------------------------------
     # number to string
