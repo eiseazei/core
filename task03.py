@@ -133,7 +133,7 @@ if __name__ == "__main__":
     print("x" * 80)
 
     #---------------------------------------------------------------------------
-    # get number chars
+    # get number digits
     number = 2135
     digits = get_digits(number)
 

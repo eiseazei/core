@@ -8,6 +8,18 @@ def factorial(n):
     else:
         return 1
 
+def rwis(string):
+    words = string.split()
+    words.reverse()
+
+    return words
+
+def number_to_string(number):
+    return str(number)
+
+def make_message(name):
+    return 'hello {}'.format('my love' if name == 'johny' else name)
+
 if __name__ == "__main__":
     # for loop
     for i in range(10):
@@ -59,27 +71,38 @@ if __name__ == "__main__":
 
     #---------------------------------------------------------------------------
     # test bigger
-    a = get_integer("enter integer 'a' for biggest test ")
-    b = get_integer("enter integer 'b' for biggest test ")
+    # a = get_integer("enter integer 'a' for biggest test ")
+    # b = get_integer("enter integer 'b' for biggest test ")
 
-    if(a == b):
-        pass
-    elif(a < b):
-        print(b, " is bigger ")
-    else:
-        print(a, " is bigger ")
+    # if(a == b):
+    #     pass
+    # elif(a < b):
+    #     print(b, " is bigger ")
+    # else:
+    #     print(a, " is bigger ")
+
+    # #---------------------------------------------------------------------------
+    # # test odd
+    # a = get_integer("enter integer for parity check ")
+
+    # if a % 2:
+    #     print(a, "even")
+    # else:
+    #     print(a, "odd")
+    
+    # #---------------------------------------------------------------------------
+    # n = 5
+    # print(n, "! = ", factorial(n), sep='')
 
     #---------------------------------------------------------------------------
-    # test odd
-    a = get_integer("enter integer for parity check ")
+    # number to string
+    number = 2135
+    print('number', number_to_string(number))
 
-    if a % 2:
-        print(a, "even")
-    else:
-        print(a, "odd")
-    
     #---------------------------------------------------------------------------
-    n = 5
-    print(n, "! = ", factorial(n), sep='')
-    
-    
+    # reverse words in string
+    print(rwis('hello world this is program'))
+
+    #---------------------------------------------------------------------------
+    # secret message
+    print(make_message('johny'))
