@@ -51,7 +51,7 @@ def correct_tail(body, tail):
         return False
 
 def get_min_max():
-    print('testing 3 number for min and max')
+    print('\ntesting 3 values for min and max')
     values = []
 
     for i in range(3):
@@ -59,8 +59,8 @@ def get_min_max():
 
     print('result is min = {}, max {}'.format(min(values), max(values)))
     
-def what_numbers():
-    print('testing values from 1 to 11')
+def what_number():
+    print('\ntesting values from 1 to 11')
 
     for i in range(1,11):
         if i % 2 == 0:
@@ -70,14 +70,14 @@ def what_numbers():
         else:
             print(i, 'not multiple 2 or 3')
 
-def fact(number):
+def fact(value):
     # result = 1
 
-    # for i in range(1, number + 1):
+    # for i in range(1, value + 1):
     #     result *= i
 
     result, i = 1, 1
-    while i <= number:
+    while i <= value:
         result *= i
         i += 1
 
@@ -103,15 +103,78 @@ def parse_login():
     
     return state
 
+def parse_integers():
+    print('\ntesting input numbers')
+    value = 1
+
+    while value > 0:
+        value = get_integer()
+    else:
+        print('got number less than 1')
+
+def parse_pack_integers():
+    print('\ntesting up to 5 integers')
+
+    count = get_integer("enter how many integers need to be tested: ")
+
+    if count > 0 and count < 6:
+        i = 0
+        value = 1
+
+        while count > i and value > 0:
+            value = get_integer()
+            count -= 1
+    else:
+        print('provided invalid count value')
+
+def test_prime():
+    print('\ntesing for prime')
+    for i in range(10, 31):
+        prime = True
+
+        for j in range(2, 10):    
+            if i % j == 0:
+                print('{} not prime, {} * {}'.format(i, j, i // j))
+                prime = False
+                break
+        if prime:
+            print('{} is prime'.format(i))
+
+def trick_sort():
+    s = 'hello world this is program'
+    l = s.split()
+    l.sort(key = lambda chunk : len(chunk))
+    # print(l)
+
+    li = [0,4,6,1,3]
+
+    # for i in range(len(li) - 1):
+    #     for j in range(i + 1):
+    #         if li[j] > li[j + 1]:
+    #             li[j], li[j + 1] = li[j + 1], li[j]
+
+    
+    # dd = [ li[ li.index(li[j + 1]) ]
+    #     for i in range(len(li) - 1)
+    #         for j in range(i + 1)
+    #             if li[j] > li[j + 1]
+    # ] 
+
+
+    
+    print(li)
+
+
+
 if __name__ == "__main__":
     #---------------------------------------------------------------------------
     # success
-    print('make it?', success_traver(55))
+    # print('make it?', success_traver(55))
 
     #---------------------------------------------------------------------------
-    print('enought', enough(10, 5, 5))
-    print('enought', enough(100, 60, 50))
-    print('enought', enough(20, 5, 5))
+    # print('enought', enough(10, 5, 5))
+    # print('enought', enough(100, 60, 50))
+    # print('enought', enough(20, 5, 5))
 
     #---------------------------------------------------------------------------
     # banjo
@@ -119,7 +182,7 @@ if __name__ == "__main__":
 
     #---------------------------------------------------------------------------
     # yes/no
-    print('yes no maybe i dont know', yes_no(3))
+    # print('yes no maybe i dont know', yes_no(3))
     
     #---------------------------------------------------------------------------
     # sheep
@@ -129,29 +192,42 @@ if __name__ == "__main__":
              True,  False, False, True,
              True,  True,  True,  True,
              False, False, True,  True]
-    print('sheeps', sheep(array))
+    # print('sheeps', sheep(array))
 
     #---------------------------------------------------------------------------
     # tail vs body
-    print(correct_tail('Fox', 'x'))
-    print(correct_tail('Emu', 't'))
+    # print(correct_tail('Fox', 'x'))
+    # print(correct_tail('Emu', 't'))
 
     #---------------------------------------------------------------------------
     # min max in range
-    print()
-    get_min_max()
+    # get_min_max()
     
     #---------------------------------------------------------------------------
-    # testing numbers
-    print()
-    what_numbers()
+    # testing integers
+    # what_number()
 
     #---------------------------------------------------------------------------
     # get fact
-    number = 5
-    print('\nfactorial of', number, 'is', fact(number))
+    # value = 5
+    # print('\nfactorial of', value, 'is', fact(value))
     
     #---------------------------------------------------------------------------
     # parse login
-    print('login status:', parse_login())
+    # print('login status:', parse_login())
+
+    #---------------------------------------------------------------------------
+    # test input integer
+    # parse_integers()
     
+    #---------------------------------------------------------------------------
+    # test pack input integer
+    # parse_pack_integers()
+
+    #---------------------------------------------------------------------------
+    # test prime
+    # test_prime()
+
+    #---------------------------------------------------------------------------
+    # trick sort
+    trick_sort()
