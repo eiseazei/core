@@ -1,39 +1,27 @@
 #!/usr/bin/python3.7
 
-import sys
+from sys import exit
+from common import get_integer_from_input
 
-def get_integer(msg = "enter integer value "):
-    val = input(msg)
-    # test input
-    try:
-        val = int(val)
-    except ValueError:
-        sys.exit("error: input must be integer")
-    return val
+# get integers
+a = get_integer_from_input('enter integer a value: ')
+b = get_integer_from_input('enter integer b value: ')
 
-if __name__ == "__main__":
+print('a + b =', a + b)
+print('a - b =', a - b)
+print('a * b =', a * b)
 
-    #---------------------------------------------------------------------------
-    # get integer
-    a = get_integer("enter integer value: ")
-    b = get_integer("enter integer value: ")
+# test denominator
+if(b == 0):
+    exit('error: division by zero')
 
-    print("a + b =", a + b)
-    print("a - b =", a - b)
-    print("a * b =", a * b)
+print('a / b = {:.2f}'.format(a / b))
 
-    # test denominator
-    if(b == 0):
-        sys.exit("error: division by zero")
+# get and print information
+name  = input('what is your name? ')
+age   = get_integer_from_input('how old are you? ')
+place = input('where do you live? ')
 
-    print("a / b =", a / b)
-
-    #---------------------------------------------------------------------------
-    # get and print information
-    name  = input("what is your name? ")
-    age   = get_integer("how old are you? ")
-    place = input("where do you live? ")
-
-    print("Hello", name)
-    print("Your age is", age)
-    print("You live in", place)
+print('Hello', name)
+print('Your age is', age)
+print('You live in', place)

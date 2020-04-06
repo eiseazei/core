@@ -1,108 +1,39 @@
 #!/usr/bin/python3.7
 
-from task01 import get_integer
+from common import get_integer_from_input, \
+                   factorial_recursion, \
+                   get_integers_digits, \
+                   string_words_reverse, \
+                   make_wellcome_message
 
-def factorial(n):
-    if n > 1:
-        return n * factorial(n - 1)
-    else:
-        return 1
+# test bigger
+a = get_integer_from_input("enter integer 'a' for biggest test ")
+b = get_integer_from_input("enter integer 'b' for biggest test ")
 
-def rwis(string):
-    words = string.split()
-    words.reverse()
+if(a == b):
+    pass
+elif(a < b):
+    print(b, " is bigger ")
+else:
+    print(a, " is bigger ")
 
-    return words
+# test odd
+a = get_integer_from_input("enter integer for parity check ")
 
-def number_to_string(number):
-    return str(number)
+if a % 2:
+    print(a, "even")
+else:
+    print(a, "odd")
 
-def make_message(name):
-    return 'hello {}'.format('my love' if name == 'johny' else name)
+n = 5
+print('n = {}, n! = {}'.format(n, factorial_recursion(n)))
 
-if __name__ == "__main__":
-    # for loop
-    for i in range(10):
-        print(i, end=' ')
-        i += 1
-    else:
-        print("last", i)
+# number to string
+number = 2135
+print('number =', number, 'digits =', get_integers_digits(number))
 
-    # while loop
-    i = 0
+# reverse words in string
+print(string_words_reverse('hello world this is program'))
 
-    while i < 10:
-        print(i, end=' ')
-        i += 3
-    else:
-        print("last", i)
-
-    # empty for loop
-    for i  in "abcdefgh":
-        pass
-    
-    # branch
-    val = -1
-
-    if val < 0:
-        print("negative")
-    elif val == 0:
-        print("zero")
-    else:
-        print("positive")
-
-    ll = list(range(10))
-
-    for i in ll:
-        if(i % 2 == 0):
-            print(i, end=' ')
-
-    print()
-
-    dd = {0 : 'a', 1 : 'b', 2 : 'c', 3 : 'd'}
-
-    for key in dd:
-        if(key == 3):
-            continue
-
-        dd[key] += " @_@"
-
-    print(dd)
-
-    #---------------------------------------------------------------------------
-    # test bigger
-    a = get_integer("enter integer 'a' for biggest test ")
-    b = get_integer("enter integer 'b' for biggest test ")
-
-    if(a == b):
-        pass
-    elif(a < b):
-        print(b, " is bigger ")
-    else:
-        print(a, " is bigger ")
-
-    #---------------------------------------------------------------------------
-    # test odd
-    a = get_integer("enter integer for parity check ")
-
-    if a % 2:
-        print(a, "even")
-    else:
-        print(a, "odd")
-    
-    #---------------------------------------------------------------------------
-    n = 5
-    print(n, "! = ", factorial(n), sep='')
-
-    #---------------------------------------------------------------------------
-    # number to string
-    number = 2135
-    print('number', number_to_string(number))
-
-    #---------------------------------------------------------------------------
-    # reverse words in string
-    print(rwis('hello world this is program'))
-
-    #---------------------------------------------------------------------------
-    # secret message
-    print(make_message('johny'))
+# secret message
+print(make_wellcome_message('johnny'))
