@@ -19,8 +19,11 @@ from common import calculate_mean, \
 # print('intiger digits sum:')
 # print(sum_of_digits())
 
-# distance between points
-p1 = point(3, 4)
-p2 = point(0, 0)
+# # distance between points
+# p1 = point(3, 4)
+# p2 = point(0, 0)
 
-print('distance between points: \n{}\n{}\nis {}'.format(p1, p2, p1 - p2))
+# print('distance between points: \n  {}\n  {}\n  is {}'.format(p1, p2, p1 - p2))
+
+
+

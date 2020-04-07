@@ -2,6 +2,11 @@
 
 from sys import exit
 from math import sqrt
+from area import circle_area, \
+                 rectangle_area, \
+                 right_traingle_area
+
+from random import randint
 
 def get_integer_from_input(message = "enter integer value: "):
     """This function gets integer value entered by user.
@@ -275,21 +280,6 @@ def find_max(*numbers):
 
     return max(numbers)
 
-def rectangle_area(a, b):
-    """This function calculates area of recrangle."""
-
-    return a * b
-
-def right_traingle_area(a, b):
-    """This function calculates area of right triangle."""
-
-    return a * b / 2
-    
-def circle_area(r):
-    """This function calculates area of circle."""
-
-    return 3.14159 * r ** 2
-
 def area_of_shape():
     """This function calculates area of given shape."""
 
@@ -323,7 +313,6 @@ def area_of_shape():
     else:
         print('error: provided invalid shape id {}'.format(key))
 
-
 def sum_of_digits():
     """This function calculates sum of integers digits."""
 
@@ -335,17 +324,35 @@ def sum_of_digits():
 class point:
     """This class intended to store 2D point coordinates."""
     def __init__(self, x, y):
+        """This method constructs class object."""
         self.x = x
         self.y = y
 
     def __sub__(self, point):
-        """This function calculates distance between points."""
+        """This method calculates distance between points."""
         dx = (self.x - point.x) ** 2
         dy = (self.y - point.y) ** 2
         
         return sqrt(dx + dy)
     
     def __str__(self):
-        """This function print point coordinates."""
+        """This method print point coordinates."""
 
         return 'x = {} y = {}'.format(self.x, self.y)
+
+def guess():
+    """This function provides guess integer [1, 100] game."""
+    value = randint(1, 100)
+    version = 0
+    print('guess integer in 1 .. 100 range!')
+
+    while version != value:
+        version = get_integer_from_input('version: ')
+
+        if value > version:
+            print('bigger')
+        elif value < version:
+            print('lesser')
+
+    else:
+        print('congratulations, you guessed value {}!'.format(value))
