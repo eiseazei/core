@@ -340,11 +340,46 @@ class point:
 
         return 'x = {} y = {}'.format(self.x, self.y)
 
+
+
+def sticks():
+    left = 21
+
+    bob = 1
+    left -= bob
+    print('Bob takes {} -> {} sticks left'.format(bob, left))
+
+    while left > 3:
+        jim = randint(1, 3)
+        left -= jim
+        print('Jim takes {} -> {} sticks left'.format(jim, left))
+
+        bob = 4 - jim
+        left -= bob
+        print('Bob takes {} -> {} sticks left'.format(bob, left))
+
+def filter_words(message):
+    message = message.capitalize()
+    print(message)
+
+def create_array(n):
+    res=[]
+    i = 1
+    while i <= n:
+        res += [i]
+        i += 1
+
+    return res
+
+#7
 def guess():
     """This function provides guess integer [1, 100] game."""
-    value = randint(1, 100)
+    MIN = 1
+    MAX = 100
+    value = randint(MIN, MAX)
     version = 0
-    print('guess integer in 1 .. 100 range!')
+
+    print('guess integer in {} .. {} range!'.format(MIN, MAX))
 
     while version != value:
         version = get_integer_from_input('version: ')

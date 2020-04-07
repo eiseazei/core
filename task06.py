@@ -4,26 +4,34 @@ from common import calculate_mean, \
                    make_abs, \
                    area_of_shape, \
                    sum_of_digits, \
-                   point
+                   point, \
+                   sticks, \
+                   filter_words, \
+                   create_array
 
-# # mean value
-# print('numbers mean test:', calculate_mean(0,1,2,3,4))
+# mean value
+print('numbers mean test:', calculate_mean(0,1,2,3,4))
 
-# # abs value
-# print('abs value -1:', make_abs(-1))
+# abs value
+print('abs value -1:', make_abs(-1))
 
-# # shape area
-# area_of_shape()
+# shape area
+area_of_shape()
 
-# # digits sum
-# print('intiger digits sum:')
-# print(sum_of_digits())
+# digits sum
+print('intiger digits sum:')
+print(sum_of_digits())
 
-# # distance between points
-# p1 = point(3, 4)
-# p2 = point(0, 0)
+# distance between points
+p1 = point(3, 4)
+p2 = point(0, 0)
+print('distance between points: \n  {}\n  {}\n  is {}'.format(p1, p2, p1 - p2))
 
-# print('distance between points: \n  {}\n  {}\n  is {}'.format(p1, p2, p1 - p2))
+# 21 sticks
+sticks()
 
+# filter words
+filter_words('HELLO CAN YOU HEAR ME')
 
-
+# fix create_array
+print(create_array(5))

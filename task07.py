@@ -4,7 +4,7 @@ from calculator import operation
 from common import guess
 
 # calculatior implementation
-# operation()
+operation()
 
 # guess integer game
 guess()
