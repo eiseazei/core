@@ -2,10 +2,6 @@
 
 from sys import exit
 from math import sqrt
-from area import circle_area, \
-                 rectangle_area, \
-                 right_traingle_area
-
 from random import randint
 
 def get_integer_from_input(message = "enter integer value: "):
@@ -280,39 +276,6 @@ def find_max(*numbers):
 
     return max(numbers)
 
-def area_of_shape():
-    """This function calculates area of given shape."""
-
-    shapes = {1 : 'rectangle', 2 : 'right triangle', 3 : 'circle'}
-
-    print('shape types:')
-
-    for key in shapes.keys():
-        print(key, shapes[key])
-
-    key = get_integer_from_input('enter shape id: ')
-
-    if key in shapes:
-        if key == 1:
-            a = get_positive_float_from_input('enter side a length: ')
-            b = get_positive_float_from_input('enter side b length: ')
-
-            result = rectangle_area(a, b)
-            print('rectangle {:.2f} {:.2f} area is {:.2f}'.format(a, b, result))
-        elif key == 2:
-            a = get_positive_float_from_input('enter side a length: ')
-            b = get_positive_float_from_input('enter side b length: ')
-
-            result = right_traingle_area(a, b)
-            print('right triangle {:.2f} {:.2f} area is {:.2f}'.format(a, b, result))
-        else:
-            r = get_positive_float_from_input('enter circle radius: ')
-
-            result = circle_area(r)
-            print('circle {:.2f} area is {:.2f}'.format(r, result))
-    else:
-        print('error: provided invalid shape id {}'.format(key))
-
 def sum_of_digits():
     """This function calculates sum of integers digits."""
 
@@ -340,9 +303,10 @@ class point:
 
         return 'x = {} y = {}'.format(self.x, self.y)
 
-
-
 def sticks():
+    """This function implement sticks game."""
+    
+    print('sticks game began')
     left = 21
 
     bob = 1
@@ -359,10 +323,15 @@ def sticks():
         print('Bob takes {} -> {} sticks left'.format(bob, left))
 
 def filter_words(message):
+    """This function capitalize string."""
+
+    print(message)
     message = message.capitalize()
     print(message)
 
 def create_array(n):
+    """This function creates array."""
+
     res=[]
     i = 1
     while i <= n:
@@ -374,6 +343,7 @@ def create_array(n):
 #7
 def guess():
     """This function provides guess integer [1, 100] game."""
+
     MIN = 1
     MAX = 100
     value = randint(MIN, MAX)

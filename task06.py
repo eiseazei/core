@@ -2,12 +2,13 @@
 
 from common import calculate_mean, \
                    make_abs, \
-                   area_of_shape, \
                    sum_of_digits, \
                    point, \
                    sticks, \
                    filter_words, \
                    create_array
+
+from area import area_of_shape
 
 # mean value
 print('numbers mean test:', calculate_mean(0,1,2,3,4))
@@ -34,4 +35,4 @@ sticks()
 filter_words('HELLO CAN YOU HEAR ME')
 
 # fix create_array
-print(create_array(5))
+print('create array', create_array(5))

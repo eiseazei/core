@@ -2,25 +2,37 @@
 
 from common import get_integer_from_input
 
-def add(a, b):
+def calc_add():
     """This function provides addition."""
 
-    return a + b
+    a = get_integer_from_input('enter a value: ')
+    b = get_integer_from_input('enter b value: ')
 
-def sub(a, b):
+    print('{} + {} = {}'.format(a, b, a + b))
+
+def calc_sub():
     """This function provides substraction."""
+    
+    a = get_integer_from_input('enter a value: ')
+    b = get_integer_from_input('enter b value: ')
 
-    return a - b
+    print('{} - {} = {}'.format(a, b, a - b))
 
-def mul(a, b):
+def calc_mul():
     """This function provides multiplication."""
 
-    return a * b
+    a = get_integer_from_input('enter a value: ')
+    b = get_integer_from_input('enter b value: ')
 
-def div(a, b):
+    print('{} * {} = {}'.format(a, b, a * b))
+
+def calc_div():
     """This function provides division."""
 
-    return a / b
+    a = get_integer_from_input('enter a value: ')
+    b = get_integer_from_input('enter b value: ')
+
+    print('{} / {} = {}'.format(a, b, a / b))
 
 def print_operations(ops):
     """This function print available operations."""
@@ -37,33 +49,22 @@ def operation():
 
     key = get_integer_from_input('enter operation id: ')
 
-    while key not in ops:
-        if key == 0:
+    while key in ops:
+        if key == -1:
+            break
+        elif key == 0:
             print_operations(ops)
         elif key == 1:
-            a = get_integer_from_input('enter a value: ')
-            b = get_integer_from_input('enter b value: ')
-
-            print('{} + {} = {}'.format(a,b, add(a, b)))
+            calc_add()
         elif key == 2:
-            a = get_integer_from_input('enter a value: ')
-            b = get_integer_from_input('enter b value: ')
-
-            print('{} - {} = {}'.format(a,b, sub(a, b)))
+            calc_sub()
         elif key == 3:
-            a = get_integer_from_input('enter a value: ')
-            b = get_integer_from_input('enter b value: ')
-
-            print('{} * {} = {}'.format(a,b, mul(a, b)))
+            calc_mul()
         elif key == 4:
-            a = get_integer_from_input('enter a value: ')
-            b = get_integer_from_input('enter b value: ')
-
-            print('{} / {} = {}'.format(a,b, div(a, b)))
+            calc_div()
         else:
             print('provided invalid operation id {}'.format(key))
             break
-
         key = get_integer_from_input('enter operation id: ')
-    else:
-        print('bye')
+        
+    print('bye')
