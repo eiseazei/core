@@ -364,7 +364,6 @@ def guess():
     else:
         print('congratulations, you guessed value {}!'.format(value))
 
-# 8
 def count_pos_sum_neg(array):
     '''This function counts positive and sum of negative vaues in array'''
     cp = 0
@@ -393,5 +392,26 @@ def sum_of_multiple_3_5():
             sum += i
     
     return sum
+
+# 8
+def summation(num):
+    '''This function makes numbers summation'''
+
+    return sum(range(1, num + 1))
+
+def list_animals(animals):
+    '''This function formats animals string'''
+    
+    list = ''
+
+    for i in range(len(animals)):
+        list += str(i + 1) + '. ' + animals[i] + '\n'
+
+    return list
+
+def double_chars(message):
+    '''This function doubles every character in message'''
+
+    return ''.join([c * 2 for c in message])
 
 # 9
