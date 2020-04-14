@@ -415,3 +415,89 @@ def double_chars(message):
     return ''.join([c * 2 for c in message])
 
 # 9
+def is_upper_case(message):
+    '''This function tests if string in uppercase'''
+    
+    return message.upper() == message
+
+def sort_textbooks(textbooks):
+    '''This function sorts strings in list ignoring case'''
+    
+    return sorted(textbooks, key=str.lower)
+
+def shortenToDate(message):
+    '''This function shortens date/time string removing time part'''
+
+    date = message.split(sep = ',')
+
+    return date[0]
+
+# 10
+class Ball:
+    '''This class implements dummy ball'''
+
+    def __init__(self, type = 'regular'):
+        '''This method initialize class properties'''
+        self.type = type
+
+    def __str__(self):
+        return 'ball type for Ball class is {:s}'.format(self.type)
+
+class Ghost:
+    '''This class implements dummy ghost'''
+
+    def __init__(self):
+        '''This method initialize class properties'''
+        self.colors = ['white' , 'yellow' , 'purple' , 'red']
+        
+        i = randint(0, len(self.colors) - 1)
+
+        self.color = self.colors[i]
+
+    def __str__(self):
+        return 'color value for Ghost class is {:s}'.format(self.color)
+
+class Human:
+    '''This class represents information about human'''
+
+    def __init__(self, name):
+        '''This method initialize class properties'''
+        
+        self.name = name
+        self.sex = 'human'
+
+class Man(Human):
+    '''This class represents information about man'''
+
+    def __init__(self, name):
+        '''This method initialize class properties'''
+        
+        super().__init__(name)
+        self.sex = 'man'
+
+class Woman(Human):
+    '''This class represents information about woman'''
+
+    def __init__(self, name):
+        '''This method initialize class properties'''
+        
+        super().__init__(name)
+        self.sex = 'woman'
+
+def make_humans():
+    '''This function make humanoids'''
+
+    m = Man('Adam')
+    w = Woman('Eve')
+
+    return [m, w]
+
+class Person:
+    '''This class implements dummy person'''
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def getPersonInfo(self):
+        '''This method format information about person'''
+        return '{:s} age is {:d}'.format(self.name, self.age)
