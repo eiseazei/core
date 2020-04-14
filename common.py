@@ -261,6 +261,8 @@ def is_prime():
         if prime:
             print('{} is prime'.format(i))
 
+# 6
+
 def calculate_mean(*numbers):
     """This function calculates mean of arbitrary number of numerical values."""
 
@@ -340,7 +342,7 @@ def create_array(n):
 
     return res
 
-#7
+# 7
 def guess():
     """This function provides guess integer [1, 100] game."""
 
@@ -361,3 +363,35 @@ def guess():
 
     else:
         print('congratulations, you guessed value {}!'.format(value))
+
+# 8
+def count_pos_sum_neg(array):
+    '''This function counts positive and sum of negative vaues in array'''
+    cp = 0
+    ns = 0
+
+    for i in array:
+        if i >= 0:
+            cp += 1
+        else:
+            ns += i
+    
+    return cp, ns
+
+def reverse_order(array):
+    '''This function reverse array'''
+
+    return array[::-1]
+
+def sum_of_multiple_3_5():
+    '''This function make sum of multiple 3 and 5 numbers'''
+
+    sum = 0
+
+    for i in range(10):
+        if i % 3 == 0 or i % 5 == 0:
+            sum += i
+    
+    return sum
+
+# 9
