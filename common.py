@@ -503,3 +503,88 @@ class Person:
         return '{:s} age is {:d}'.format(self.name, self.age)
 
 # 11
+
+def test_integer_odd_even(value) -> None:
+    """Test if value is odd or even."""
+
+    if value % 2:
+        print('provided value {} is odd'.format(value))
+    else:
+        print('provided value {} is even'.format(value))
+
+def test_input_integer(message = 'enter arbitrary integer: ') -> int:
+    """Test if input is integer and make exception if not."""
+
+    value = input(message)
+
+    try:
+        value = int(value)
+    except ValueError:
+        print('provided value is invalid: "{}" not integer'.format(value))
+    
+    return value
+
+class ValueExcept(Exception):
+    """Exceptions for negative integers."""
+    pass
+
+def handle_age_input() -> None:
+    """Test provided value for age and make exception if invalid."""
+
+    try:
+        value = test_input_integer('enter your age: ')
+
+        if value >= 0:
+            test_integer_odd_even(value)
+        else:
+            raise ValueExcept
+    except ValueExcept:
+        print('provided age value is negative!')
+
+def num_denum() -> None:
+    """Test numinator and denuminator."""
+
+    n = 0
+    d = 0
+
+    try:
+        string = input('type numinator and denuminator separated by ",": ')
+
+        values = string.split(sep = ',', maxsplit = 1)
+
+        n = int(values[0])
+        d = int(values[1])
+
+        result = n / d
+
+    except IndexError:
+        pass
+    except ValueError:
+        pass
+    except ZeroDivisionError:
+        pass
+    finally:
+        print('{:d} / {:d} = {:2f}'.format(n, d, result))
+    
+def week_day() -> None:
+    """Print week day on input."""
+
+    days = {1 : 'monday', 
+            2 : 'tuesday',
+            3 : 'wednesday',
+            4 : 'thursday',
+            5 : 'friday',
+            6 : 'saturday',
+            7 : 'sunday'}
+
+    name = ''
+    
+    day = test_input_integer('enter week day number: ')
+
+    try:
+        name = days[day]
+    except KeyError:
+        exit('provided day value {} is invalid'.format(day))
+        
+    finally:
+        print('week day is {}'.format(name))
