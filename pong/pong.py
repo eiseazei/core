@@ -165,6 +165,5 @@ class Pong:
                                  self.message,
                                  Pong.BACOLOR,
                                  Pong.BGCOLOR)
-
         pygame.display.update()
         
