@@ -167,3 +167,4 @@ class Pong:
                                  Pong.BGCOLOR)
 
         pygame.display.update()
+        
