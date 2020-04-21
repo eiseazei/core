@@ -501,3 +501,5 @@ class Person:
     def getPersonInfo(self):
         '''This method format information about person'''
         return '{:s} age is {:d}'.format(self.name, self.age)
+
+# 11
