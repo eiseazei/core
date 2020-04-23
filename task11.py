@@ -5,14 +5,14 @@ from common import test_input_integer, \
                    num_denum, \
                    week_day
 
-# # test user input and make exception if bad
-# test_input_integer()
+# test user input and make exception if bad
+test_input_integer()
 
-# # test age value
-# handle_age_input()
+# test age value
+handle_age_input()
 
-# # test two input values and divide
-# num_denum()
+# test two input values and divide
+num_denum()
 
 # print week day
 week_day()

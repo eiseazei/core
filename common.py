@@ -588,3 +588,43 @@ def week_day() -> None:
         
     finally:
         print('week day is {}'.format(name))
+
+# 12
+def hash_names() -> None:
+    """Make hash of names."""
+
+    names = ['bob', 'john', 'bill']
+    names = list(map(hash, names))
+
+    print(names)
+
+def filter_red() -> None:
+    """Find match 'red' in array"""
+
+    values = ['red', 'green', 'black', 'red', 'brown', 'red', 'blue', 'red', 'red', 'yellow']
+    values = list(filter(lambda value: value == 'red', values))
+
+    print(values)
+
+def convers_string2int() -> None:
+    """Use map to convert array with str to int."""
+
+    values = ['0', '1', '2']
+
+    array = list(map(int, values))
+
+    print(array)
+
+def convert_miles2km() -> None:
+    """Use map to convert miles in km."""
+
+    miles = [12, 13, 14]
+
+    def mil2km(mile):
+        return mile * 1.6
+
+    km1 = list(map(mil2km, miles))
+    km2 = list(map(lambda value: value * 1.6, miles))
+
+    print(km1)
+    print(km2)
