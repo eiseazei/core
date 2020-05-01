@@ -5,8 +5,8 @@ from math import sqrt
 from random import randint
 
 def get_integer_from_input(message = "enter integer value: ") -> int:
-    """This function gets integer value entered by user.
-    Exits in case of failure."""
+    """This function get integer value entered by user.
+    Exit in case of failure."""
 
     value = input(message)
 
@@ -17,8 +17,8 @@ def get_integer_from_input(message = "enter integer value: ") -> int:
     return value
 
 def get_positive_float_from_input(message = "enter positive float value: ") -> int:
-    """This function gets positive float value entered by user.
-    Exits in case of failure."""
+    """This function get positive float value entered by user.
+    Exit in case of failure."""
 
     value = input(message)
 
@@ -27,7 +27,6 @@ def get_positive_float_from_input(message = "enter positive float value: ") -> i
 
         if value < 0:
             exit("input error: value must be positive")
-
     except ValueError:
         exit("input error: value must be float")
 
@@ -67,7 +66,7 @@ def multiply_digits(digits) -> int:
     return result
 
 def factorial_recursion(integer) -> int:
-    """This function calculates factorial using recursion."""
+    """This function calculate factorial using recursion."""
 
     if integer > 1:
         return integer * factorial_recursion(integer - 1)
@@ -75,7 +74,7 @@ def factorial_recursion(integer) -> int:
         return 1
 
 def factorial_loop(integer) -> int:
-    """This function calculates factorial using for loop."""
+    """This function calculate factorial using for loop."""
     
     result = 1
 
@@ -85,15 +84,12 @@ def factorial_loop(integer) -> int:
     return result
 
 def string_words_reverse(string) -> str:
-    """This function puts strings words in opposite direction."""
+    """This function put string words in opposite direction."""
 
-    words = string.split()
-    words.reverse()
-
-    return words
+    return ' '.join(reversed(string.split()))
 
 def integer2string(integer) -> str:
-    """This function cast integer to string."""
+    """This make not safe integer to string cast."""
 
     return str(integer)
 
@@ -102,21 +98,22 @@ def make_wellcome_message(login) -> str:
 
     return 'hello {}'.format('my love' if login == 'johnny' else login)
 
+#5
 def is_travel_successfull(distance) -> bool:
     """This function test if travel is successfull."""
 
     GAS_RATE = 25
     GALONS_COUNT = 2
 
-    return True if GAS_RATE * GALONS_COUNT >= distance else False
+    return GAS_RATE * GALONS_COUNT >= distance
 
 def is_available_bus_sits(capacity, on, wait) -> int:
-    """This function tests if there is enought sits in bus."""
+    """This function test if there is enought sits in bus."""
 
     return 1 if (capacity - on) >= wait else 0
 
 def test_banjo_player_name() -> str:
-    """This function tests banjo player name and format message."""
+    """This function test banjo player name and format message."""
 
     name = input('Are you playing banjo? Enter your name: ')
 
@@ -131,17 +128,18 @@ def test_banjo_player_name() -> str:
     return name + msg
 
 def test_input_yes_no(value) -> str:
-    """This function tests input argument and returns boolean result as string."""
+    """This function test input argument and returns boolean result as string."""
 
     return 'Yes' if value else 'No'
 
 def counting_sheep(sheeps) -> int:
-    """This function counts True in list."""
+    """This function count True in list."""
     
     count = 0
 
     for sheep in sheeps:
-        if sheep: count += 1
+        if sheep:
+            count += 1
     
     return count
 
@@ -153,7 +151,7 @@ def is_correct_tail(body, tail) -> bool:
     
     sub = body[-len(tail) : ]
     
-    return True if sub == tail else False
+    return sub == tail
 
 def get_min_and_max() -> None:
     """This function finds minimum and maximum values in input list of 3 elements."""
@@ -168,7 +166,7 @@ def get_min_and_max() -> None:
     print('min = {}, max {}'.format(min(values), max(values)))
 
 def what_number() -> None:
-    """This function tests integers properties from 1 t0 10"""
+    """This function test integers properties from 1 to 10."""
 
     MIN = 1
     MAX = 10
@@ -206,7 +204,7 @@ def make_login_procedure() -> bool:
 
 def parse_integers() -> None:
     """This function takes integers from input that bigger than 0.
-    In other case quits."""
+    Quits in other cases."""
 
     while True:
         value = get_integer_from_input()
@@ -219,7 +217,7 @@ def parse_integers() -> None:
 
 def parse_pack_integers() -> None:
     """This function takes N integers from input that bigger than 0.
-    In other case quits. N is set during first input and should not exceed 5."""
+    Quits in other cases. N is set during first input and should not exceed 5."""
 
     count = get_integer_from_input("enter how many integers need to be tested: ")
 
@@ -262,9 +260,8 @@ def is_prime() -> None:
             print('{} is prime'.format(i))
 
 # 6
-
 def calculate_mean(*numbers) -> int:
-    """This function calculates mean of arbitrary number of numerical values."""
+    """This function calculate mean of arbitrary number of numerical values."""
 
     return sum(numbers)/len(numbers)
 
@@ -279,7 +276,7 @@ def find_max(*numbers) -> int:
     return max(numbers)
 
 def sum_of_digits() -> int:
-    """This function calculates sum of integers digits."""
+    """This function calculate sum of integers digits."""
 
     integer = get_integer_from_input()
     digits = get_integers_digits(integer)
@@ -288,19 +285,19 @@ def sum_of_digits() -> int:
 
 class point:
     """This class intended to store 2D point coordinates."""
-    def __init__(self, x, y):
+    def __init__(self, x, y) -> None:
         """This method constructs class object."""
         self.x = x
         self.y = y
 
-    def __sub__(self, point):
-        """This method calculates distance between points."""
+    def __sub__(self, point) -> float:
+        """This method calculate distance between points."""
         dx = (self.x - point.x) ** 2
         dy = (self.y - point.y) ** 2
         
         return sqrt(dx + dy)
     
-    def __str__(self):
+    def __str__(self) -> str:
         """This method print point coordinates."""
 
         return 'x = {} y = {}'.format(self.x, self.y)
@@ -327,24 +324,25 @@ def sticks() -> None:
 def filter_words(message) -> None:
     """This function capitalize string."""
 
-    print(message)
+    print('message before capitalize: {}'.format(message))
+    
     message = message.capitalize()
-    print(message)
+
+    print('message after capitalize: {}'.format(message))
 
 def create_array(n) -> list:
-    """This function creates an array, populated with integers from 1 to n."""
+    """This function create an array, populated with integers from 1 to n."""
 
     res=[]
-    i = 1
-    while i <= n:
-        res += [i]
-        i += 1
+
+    for i in range(1, n + 1):
+        res.append(i)
 
     return res
 
 # 7
 def guess() -> None:
-    """This function provides guess integer [1, 100] game."""
+    """This function implement guess integer game."""
 
     MIN = 1
     MAX = 100
@@ -364,8 +362,8 @@ def guess() -> None:
     else:
         print('congratulations, you guessed value {}!'.format(value))
 
-def count_pos_sum_neg(array) -> []:
-    """This function counts positive and sum of negative vaues in array"""
+def count_pos_sum_neg(array) -> tuple:
+    """This function count positive and sum of negative vaues in array."""
     cp = 0
     ns = 0
 
@@ -378,12 +376,12 @@ def count_pos_sum_neg(array) -> []:
     return cp, ns
 
 def reverse_order(array) -> list:
-    """This function reverse array"""
+    """This function reverse array."""
 
     return array[::-1]
 
 def sum_of_multiple_3_5() -> int:
-    """This function make sum of multiple 3 and 5 numbers"""
+    """This function make sum of multiple 3 and 5 numbers."""
 
     sum = 0
 
@@ -395,12 +393,12 @@ def sum_of_multiple_3_5() -> int:
 
 # 8
 def summation(num) -> int:
-    """This function makes numbers summation"""
+    """This function makes numbers summation."""
 
     return sum(range(1, num + 1))
 
 def list_animals(animals) -> str:
-    """This function formats animals string"""
+    """This function formats animals string."""
     
     string = ''
 
@@ -410,23 +408,23 @@ def list_animals(animals) -> str:
     return string
 
 def double_chars(message) -> str:
-    """This function doubles every character in message"""
+    """This function doubles every character in message."""
 
     return ''.join([c * 2 for c in message])
 
 # 9
 def is_upper_case(message) -> bool:
-    """This function tests if string in uppercase"""
+    """This function test if string in uppercase."""
     
     return message.upper() == message
 
 def sort_textbooks(textbooks) -> list:
-    """This function sorts strings in list ignoring case"""
+    """This function sorts strings in list ignoring case."""
     
     return sorted(textbooks, key=str.lower)
 
 def shortenToDate(message) -> str:
-    """This function shortens date/time string removing time part"""
+    """This function shortens date/time string removing time part."""
 
     date = message.split(sep = ',')
 
@@ -434,76 +432,75 @@ def shortenToDate(message) -> str:
 
 # 10
 class Ball:
-    """This class implements dummy ball"""
+    """This class implements dummy ball."""
 
-    def __init__(self, type = 'regular'):
-        """This method initialize class properties"""
+    def __init__(self, type = 'regular') -> None:
+        """This method initialize class properties."""
         self.type = type
 
-    def __str__(self):
+    def __str__(self) -> str:
         return 'ball type for Ball class is {:s}'.format(self.type)
 
 class Ghost:
-    """This class implements dummy ghost"""
+    """This class implements dummy ghost."""
 
-    def __init__(self):
-        """This method initialize class properties"""
+    def __init__(self) -> None:
+        """This method initialize class properties."""
         self.colors = ['white' , 'yellow' , 'purple' , 'red']
         
         i = randint(0, len(self.colors) - 1)
 
         self.color = self.colors[i]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return 'color value for Ghost class is {:s}'.format(self.color)
 
 class Human:
-    """This class represents information about human"""
+    """This class represents information about human."""
 
-    def __init__(self, name):
-        """This method initialize class properties"""
+    def __init__(self, name) -> None:
+        """This method initialize class properties."""
         
         self.name = name
         self.sex = 'human'
 
 class Man(Human):
-    """This class represents information about man"""
+    """This class represents information about man."""
 
-    def __init__(self, name):
-        """This method initialize class properties"""
+    def __init__(self, name) -> None:
+        """This method initialize class properties."""
         
         super().__init__(name)
         self.sex = 'man'
 
 class Woman(Human):
-    """This class represents information about woman"""
+    """This class represents information about woman."""
 
-    def __init__(self, name):
-        """This method initialize class properties"""
+    def __init__(self, name) -> None:
+        """This method initialize class properties."""
         
         super().__init__(name)
         self.sex = 'woman'
 
-def make_humans():
-    """This function make humanoids"""
+def make_humans() -> tuple:
+    """This function make humanoids."""
 
     m = Man('Adam')
     w = Woman('Eve')
 
-    return [m, w]
+    return m, w
 
 class Person:
-    """This class implements dummy person"""
-    def __init__(self, name, age):
+    """This class implements dummy person."""
+    def __init__(self, name, age) -> None:
         self.name = name
         self.age = age
 
-    def getPersonInfo(self):
-        """This method format information about person"""
+    def getPersonInfo(self) -> str:
+        """This method format information about person."""
         return '{:s} age is {:d}'.format(self.name, self.age)
 
 # 11
-
 def test_integer_odd_even(value) -> None:
     """Test if value is odd or even."""
 
@@ -585,7 +582,6 @@ def week_day() -> None:
         name = days[day]
     except KeyError:
         exit('provided day value {} is invalid'.format(day))
-        
     finally:
         print('week day is {}'.format(name))
 
@@ -599,7 +595,7 @@ def hash_names() -> None:
     print(names)
 
 def filter_red() -> None:
-    """Find match 'red' in array"""
+    """Find match 'red' in array."""
 
     values = ['red', 'green', 'black', 'red', 'brown', 'red', 'blue', 'red', 'red', 'yellow']
     values = list(filter(lambda value: value == 'red', values))
