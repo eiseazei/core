@@ -1,4 +1,4 @@
-# c/c++ source files
+# c/c++ object files
 *.o
 
 # python byte code
