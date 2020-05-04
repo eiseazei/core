@@ -14,5 +14,5 @@ struct factorial<1>
 
 int main()
 {
-  std::cout << "5! is is " << factorial<5>::result << "\n";
+  std::cout << "5! is " << factorial<5>::result << "\n";
 }
